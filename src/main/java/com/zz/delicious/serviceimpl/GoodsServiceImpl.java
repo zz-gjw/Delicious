@@ -23,6 +23,7 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public ResultVo selectAllByGoodName(String goodsname) {
-        return null;
+        List<Goods> list = goodDao.selectAllByGoodName(goodsname);
+        return ResultUtil.exec(true,"OK",list);
     }
 }

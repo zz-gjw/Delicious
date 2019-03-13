@@ -12,4 +12,5 @@ public interface GoodsService {
     ResultVo selectAllByGoodName(String goodsname);
 
 
+
 }

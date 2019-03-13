@@ -24,6 +24,10 @@
     ON gt.cid=gc.cid
     where gid = #{gid,jdbcType=INTEGER}
   </select>
+  <select id="selectAllByGoodName" resultType="com.zz.delicious.entity.Goods">
+    SELECT * FROM goods WHERE goodsname LIKE concat("%",#{goodsname},"%")
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from goods
     where gid = #{gid,jdbcType=INTEGER}
