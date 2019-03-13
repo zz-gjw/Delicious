@@ -5,13 +5,19 @@ import java.util.Date;
 public class Order {
     private Integer id;
 
-    private Integer number;
+    private String number;
 
-    private Integer cartid;
+    private Double totalprice;
 
     private Integer state;
 
     private Date createtime;
+
+    private String address;
+
+    private Integer phone;
+
+    private Integer userid;
 
     public Integer getId() {
         return id;
@@ -21,20 +27,20 @@ public class Order {
         this.id = id;
     }
 
-    public Integer getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(Integer number) {
-        this.number = number;
+    public void setNumber(String number) {
+        this.number = number == null ? null : number.trim();
     }
 
-    public Integer getCartid() {
-        return cartid;
+    public Double getTotalprice() {
+        return totalprice;
     }
 
-    public void setCartid(Integer cartid) {
-        this.cartid = cartid;
+    public void setTotalprice(Double totalprice) {
+        this.totalprice = totalprice;
     }
 
     public Integer getState() {
@@ -51,5 +57,29 @@ public class Order {
 
     public void setCreatetime(Date createtime) {
         this.createtime = createtime;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
+    }
+
+    public Integer getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Integer phone) {
+        this.phone = phone;
+    }
+
+    public Integer getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 }

@@ -4,7 +4,7 @@ import com.zz.delicious.entity.Order;
 
 public interface OrderMapper {
     int deleteByPrimaryKey(Integer id);
-
+    //添加订单
     int insert(Order record);
 
     int insertSelective(Order record);

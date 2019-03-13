@@ -18,9 +18,7 @@
   </select>
 
   <insert id="insert" parameterType="com.zz.delicious.entity.User">
-    insert into user (id, username, password, 
-      flag)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{flag,jdbcType=INTEGER})
+    insert into user (id, username, password)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
   </insert>
 </mapper>
