@@ -24,7 +24,10 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public ResultVo selectAllByGoodName(String goodsname) {
         List<Goods> list = goodDao.selectAllByGoodName(goodsname);
-        return ResultUtil.exec(true,"OK",list);
+        if (list.size() !=0){
+            return ResultUtil.exec(true,"OK",list);
+        }
+        return ResultUtil.exec(false,"没有此商品",null);
     }
 
     @Override
