@@ -16,4 +16,8 @@ public interface CartMapper {
     int updateByid(Cart record);
     //根据用户id修改改用户的购物车信息
     int updateByUserid(Integer userid);
+    //根据商品id查找该商品
+    Cart selecByGid(Integer goodsid);
+    //根据商品id使该商品的数量自增1
+    int updataNum(Integer goodsid);
 }

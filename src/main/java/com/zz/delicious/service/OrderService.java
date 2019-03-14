@@ -2,6 +2,8 @@ package com.zz.delicious.service;
 
 import com.zz.delicious.common.vo.ResultVo;
 import com.zz.delicious.entity.Order;
+import com.zz.delicious.entity.Orderdetail;
+
 
 /**
  * @Author : zz-gjw
@@ -10,5 +12,5 @@ import com.zz.delicious.entity.Order;
  */
 public interface OrderService {
     //添加订单
-    ResultVo addOrder(Order order);
+    ResultVo addOrder(Order order, Orderdetail orderDetail);
 }

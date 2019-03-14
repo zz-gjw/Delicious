@@ -27,9 +27,15 @@ public class CartServiceImpl implements CartService {
         a.setGoodsid(goodsid);
         a.setNum(1);
         a.setUserid(b);
-        Integer c = cartMapper.insert(a);
-        if(c>0){
-            return ResultUtil.exec(true,"ok",null);
+        Cart cart = cartMapper.selecByGid(goodsid);
+        if(cart!=null){
+            Integer d = cartMapper.updataNum(goodsid);
+            return  ResultUtil.exec(true,"ok",null);
+        }else if (cart==null){
+            Integer c = cartMapper.insert(a);
+            if(c>0){
+                return ResultUtil.exec(true,"ok",null);
+            }
         }
         return ResultUtil.exec(false,"添加购物车失败",null);
     }

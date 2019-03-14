@@ -31,7 +31,7 @@
     values (#{number,jdbcType=VARCHAR}, #{totalprice,jdbcType=DOUBLE}, 1, now(), #{address,jdbcType=VARCHAR},
       #{phone,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.zz.delicious.entity.Order">
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.zz.delicious.entity.Order">
     insert into t_order
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

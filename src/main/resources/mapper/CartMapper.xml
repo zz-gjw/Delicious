@@ -28,6 +28,14 @@
     on c.goodsid=g.gid
     where userid = #{userid,jdbcType=INTEGER} and c.flag=1
   </select>
+
+  <select id="selecByGid" parameterType="java.lang.Integer" resultMap="BaseResultMap1">
+    select * from t_cart c
+    inner join goods g
+    on c.goodsid=g.gid
+    where goodsid = #{goodsid,jdbcType=INTEGER} and c.flag=1
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_cart
     where id = #{id,jdbcType=INTEGER}
@@ -95,4 +103,9 @@
   <update id="updateByUserid" parameterType="java.lang.Integer">
     update t_cart set flag=2 where userid =  #{userid}
   </update>
+
+  <update id="updataNum" parameterType="java.lang.Integer">
+    update t_cart set num=num+1 where goodsid = #{goodsid,jdbcType=INTEGER}
+  </update>
+
 </mapper>
