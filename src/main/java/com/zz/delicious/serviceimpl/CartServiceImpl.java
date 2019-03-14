@@ -22,14 +22,20 @@ public class CartServiceImpl implements CartService {
     private CartMapper cartMapper;
     @Override
     public ResultVo addCart(String token, int goodsid) {
-        Cart a = new Cart();
+
         int b = TokenUtil.parseToken(token).getId();
+        Cart ca = new Cart();
+        ca.setGoodsid(goodsid);
+        ca.setUserid(b);
+
+        Cart a = new Cart();
         a.setGoodsid(goodsid);
         a.setNum(1);
         a.setUserid(b);
-        Cart cart = cartMapper.selecByGid(goodsid);
+
+        Cart cart = cartMapper.selecByGid(ca);
         if(cart!=null){
-            Integer d = cartMapper.updataNum(goodsid);
+            Integer d = cartMapper.updataNum(ca);
             return  ResultUtil.exec(true,"ok",null);
         }else if (cart==null){
             Integer c = cartMapper.insert(a);
@@ -49,12 +55,31 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public ResultVo updateUserCart(Cart cart) {
+    public ResultVo updateUserCart(String token, Integer goodsid) {
+        int b = TokenUtil.parseToken(token).getId();
+        Cart cart = new Cart();
+        cart.setUserid(b);
+        cart.setGoodsid(goodsid);
         int a = cartMapper.updateByid(cart);
         if(a>0){
             return ResultUtil.exec(true,"ok",null);
         }
         return ResultUtil.exec(false,"",null);
+    }
+
+    @Override
+    public ResultVo deleCart(String token, Integer goodsid) {
+
+        int b = TokenUtil.parseToken(token).getId();
+
+        Cart cart1 = new Cart();
+        cart1.setUserid(b);
+        cart1.setGoodsid(goodsid);
+        int a = cartMapper.delCart(cart1);
+        if(a>0){
+            return ResultUtil.exec(true,"ok",null);
+        }
+        return ResultUtil.exec(false,"操作失误",null);
     }
 
 }

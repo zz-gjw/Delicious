@@ -13,8 +13,15 @@ public interface CartService {
     ResultVo addCart(String token, int goodsid);
     //根据用户id展示该用户的购物车
     ResultVo showUserCart(String token);
-    //根据用户id修改该用户的购物车
-    ResultVo updateUserCart(Cart cart);
+
+    //根据用户id和goodsid修改该用户的购物车
+    ResultVo updateUserCart(String token, Integer goodsid);
+
+
     /*//通过userid删除该用户的购物车
     ResultVo delCart(String token);*/
+
+
+
+    ResultVo deleCart(String token, Integer goodsid);
 }
