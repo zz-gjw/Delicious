@@ -12,5 +12,6 @@ public interface GoodsService {
     ResultVo selectAllByGoodName(String goodsname);
 
 
+    ResultVo selectAllByTypeId(Integer typeid);
 
 }

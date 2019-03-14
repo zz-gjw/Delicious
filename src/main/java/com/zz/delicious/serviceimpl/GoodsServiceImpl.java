@@ -26,4 +26,10 @@ public class GoodsServiceImpl implements GoodsService {
         List<Goods> list = goodDao.selectAllByGoodName(goodsname);
         return ResultUtil.exec(true,"OK",list);
     }
+
+    @Override
+    public ResultVo selectAllByTypeId(Integer typeid) {
+        List<Goods> list = goodDao.selectAllByTypeId(typeid);
+        return ResultUtil.exec(true,"OK",list);
+    }
 }

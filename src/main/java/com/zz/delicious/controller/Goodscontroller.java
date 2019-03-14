@@ -23,4 +23,10 @@ public class Goodscontroller {
     @ApiOperation(value = "搜索商品信息",notes = "根据传入商品名字，以及模糊名字（goodsname），查看到商品的详细信息")
     @PostMapping("selectAllByGoodName.do")
     ResultVo selectAllByGoodName(String goodsname){return goodsService.selectAllByGoodName(goodsname);}
+
+    @ApiOperation(value = "展示商品",notes = "根据传入二级分类菜单typeid，查看商品")
+    @PostMapping("selectAllByTypeId.do")
+    ResultVo selectAllByTypeId(Integer typeid){
+        return goodsService.selectAllByTypeId(typeid);
+    }
 }

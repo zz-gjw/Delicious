@@ -27,6 +27,12 @@
   <select id="selectAllByGoodName" resultType="com.zz.delicious.entity.Goods">
     SELECT * FROM goods WHERE goodsname LIKE concat("%",#{goodsname},"%")
   </select>
+  <select id="selectAllByTypeId" resultType="com.zz.delicious.entity.Goods">
+    select
+    <include refid="Base_Column_List" />
+    from goods
+    where typeid = #{typeid,jdbcType=INTEGER}
+  </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from goods
