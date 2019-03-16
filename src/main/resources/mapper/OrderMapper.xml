@@ -128,15 +128,4 @@
     </set>
     where id = #{id,jdbcType=INTEGER} and userid = #{userid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zz.delicious.entity.Order">
-    update t_order
-    set number = #{number,jdbcType=VARCHAR},
-      totalprice = #{totalprice,jdbcType=DOUBLE},
-      state = #{state,jdbcType=INTEGER},
-      createtime = #{createtime,jdbcType=TIMESTAMP},
-      address = #{address,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=INTEGER},
-      userid = #{userid,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
 </mapper>
