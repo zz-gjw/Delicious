@@ -20,12 +20,7 @@
     delete from t_orderdetail
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.zz.delicious.entity.Orderdetail">
-    insert into t_orderdetail (goodsid, num,
-      orderid)
-    values (#{goodsid,jdbcType=INTEGER}, #{num,jdbcType=INTEGER},
-      #{orderid,jdbcType=INTEGER})
-  </insert>
+
   <insert id="insertSelective" parameterType="com.zz.delicious.entity.Orderdetail">
     insert into t_orderdetail
     <trim prefix="(" suffix=")" suffixOverrides=",">

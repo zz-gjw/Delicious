@@ -97,7 +97,7 @@
         flag = #{flag,jdbcType=INTEGER},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where goodsid = #{goodsid,jdbcType=INTEGER} and userid =#{userid}
   </update>
 
   <update id="updateByUserid" parameterType="java.lang.Integer">

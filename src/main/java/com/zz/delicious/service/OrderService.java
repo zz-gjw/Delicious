@@ -12,5 +12,9 @@ import com.zz.delicious.entity.Orderdetail;
  */
 public interface OrderService {
     //添加订单
-    ResultVo addOrder(Order order, Orderdetail orderDetail);
+    ResultVo addOrder(Order order, Orderdetail orderDetail, String token);
+    //展示订单
+    ResultVo showOrder(Integer state, String token);
+    //修改订单状态
+    ResultVo updateById(String token,Integer id, Integer state);
 }

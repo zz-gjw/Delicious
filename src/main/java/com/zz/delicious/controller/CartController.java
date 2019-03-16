@@ -35,10 +35,10 @@ public class CartController {
         return cartService.showUserCart(token);
     }
 
-    @ApiOperation(value = "修改购物车", notes = "根据购物车id修改购物车信息，只需要传入字段‘id’的值就行")
+    @ApiOperation(value = "修改购物车", notes = "根据购物车id修改购物车信息，只需要传入token、字段‘goodsid’和‘num’的值就行")
     @GetMapping("updateUserCart.do")
-    ResultVo updateUserCart(String token, Integer goodsid){
-        return cartService.updateUserCart(token,goodsid);
+    ResultVo updateUserCart(String token, Cart cart){
+        return cartService.updateUserCart(token,cart);
     }
 
     @ApiOperation(value = "删除购物车中的商品",notes = "传入token和goodsid删除购物车中对应的商品")

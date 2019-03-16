@@ -55,12 +55,15 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public ResultVo updateUserCart(String token, Integer goodsid) {
+    public ResultVo updateUserCart(String token, Cart cart) {
         int b = TokenUtil.parseToken(token).getId();
-        Cart cart = new Cart();
-        cart.setUserid(b);
-        cart.setGoodsid(goodsid);
-        int a = cartMapper.updateByid(cart);
+
+        Cart abc = new Cart();
+        abc.setUserid(b);
+        abc.setGoodsid(cart.getGoodsid());
+        abc.setNum(cart.getNum());
+
+        int a = cartMapper.updateByid(abc);
         if(a>0){
             return ResultUtil.exec(true,"ok",null);
         }

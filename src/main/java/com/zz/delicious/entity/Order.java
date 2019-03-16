@@ -19,6 +19,16 @@ public class Order {
 
     private Integer userid;
 
+    private Orderdetail orderdetail;
+
+    public Orderdetail getOrderdetail() {
+        return orderdetail;
+    }
+
+    public void setOrderdetail(Orderdetail orderdetail) {
+        this.orderdetail = orderdetail;
+    }
+
     public Integer getId() {
         return id;
     }
